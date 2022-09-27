@@ -43,6 +43,10 @@ public class SearchDrinks extends AppCompatActivity {
         user_Drink = (EditText)findViewById(R.id.drinksearchbar);
     }
 
+    /**
+     * This thread is called by the callWebserviceButtonHandler on click.
+     *
+     */
     public void runOnRunnableThread(View view){
         runnableThread runnableThread = new runnableThread();
         new Thread(runnableThread).start();

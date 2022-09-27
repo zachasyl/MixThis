@@ -7,6 +7,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
+/**
+ * This class helps convert the input stream to a string using stringBuilder.
+ */
 public class NetworkUti {
 
     public static String convertStreamToString(InputStream inputStream){
@@ -25,6 +29,10 @@ public class NetworkUti {
         return "";
     }
 
+
+    /**
+     * Handles get request.
+     */
     public static String httpResponse(URL url) throws IOException {
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -32,7 +40,9 @@ public class NetworkUti {
 
         conn.connect();
 
+        // inputstream is the HTTP response code for the URL with url
         InputStream inputStream = conn.getInputStream();
+        //convert InputStream object into a String.
         String resp = NetworkUti.convertStreamToString(inputStream);
 
         return resp;
