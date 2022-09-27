@@ -55,6 +55,8 @@ public class SearchDrinks extends AppCompatActivity {
     class runnableThread implements Runnable{
         String one_ingredient = "";
         String all_ingreditents = "";
+        private Bitmap bitmap = null;
+
 
         @Override
         public void run(){
@@ -83,6 +85,10 @@ public class SearchDrinks extends AppCompatActivity {
                     }
                     // newline after each ingredient
                     all_ingreditents += one_ingredient + "\n";
+                    bitmap = BitmapFactory.decodeStream((InputStream) new URL(
+                            jObject.getJSONArray("drinks").getJSONObject(0).get("strDrinkThumb").toString()
+                    ).getContent());
+
                     i += 1;
 
                 }
@@ -95,15 +101,20 @@ public class SearchDrinks extends AppCompatActivity {
                 public void run() {
 
                     TextView result_view = (TextView)findViewById(R.id.result_textview);
+                    final ImageView drinkImage = (ImageView)findViewById(R.id.imageView);
 
                     if (all_ingreditents.length() >0 ) {
                         result_view.setText((CharSequence) all_ingreditents);
+                        drinkImage.setImageBitmap(bitmap);
+
                     }
                     else{
                         // Either there were multiple drinks but the first was
                         // not an exact match,  the first drink was not a match, or there were no
                         // drinks.
                         result_view.setText("No Drink Found.");
+                        drinkImage.setImageBitmap(null);
+
                     }
                 }
             });

@@ -43,4 +43,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/drinksearchbar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="126dp"
+        android:layout_height="105dp"
+        app:srcCompat="@android:drawable/divider_horizontal_dim_dark"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="373dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
