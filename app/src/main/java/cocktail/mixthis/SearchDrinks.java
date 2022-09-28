@@ -57,10 +57,12 @@ public class SearchDrinks extends AppCompatActivity {
         String all_ingreditents = "";
         private Bitmap bitmap = null;
         private ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        TextView result_view = (TextView)findViewById(R.id.result_textview);
 
         @Override
         public void run(){
-
+            // Reset the text view to empty upon new search.
+            result_view.setText("");
             // Progress visibility should happen separately and before/while loading.
             // Thread handler will first set progressBar to visible.
             textHandler.post(new Runnable() {
@@ -113,7 +115,6 @@ public class SearchDrinks extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    TextView result_view = (TextView)findViewById(R.id.result_textview);
                     final ImageView drinkImage = (ImageView)findViewById(R.id.imageView);
 
                     if (all_ingreditents.length() >0 ) {
@@ -132,12 +133,14 @@ public class SearchDrinks extends AppCompatActivity {
                     // Image isn't found so let user know nothing to load.
                     progressBar.setVisibility(View.INVISIBLE);
 
+
                 }
             });
         }
     }
     // we run the thread after this button click. For now this onclick is specified in search_drinks.xml
     public void callWebserviceButtonHandler(View view)   {
+
         string_format = actual_url + user_Drink.getText().toString();
         runOnRunnableThread(view);
     }
