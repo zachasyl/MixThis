@@ -85,6 +85,8 @@ public class SearchDrinks extends AppCompatActivity {
                     }
                     // newline after each ingredient
                     all_ingreditents += one_ingredient + "\n";
+
+                    //parsing JSON for image of found drink
                     bitmap = BitmapFactory.decodeStream((InputStream) new URL(
                             jObject.getJSONArray("drinks").getJSONObject(0).get("strDrinkThumb").toString()
                     ).getContent());
