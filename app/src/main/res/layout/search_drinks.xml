@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <TextView
         android:id="@+id/result_textview"
@@ -26,29 +26,33 @@
         android:layout_height="268dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/drinksearchbar"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/drinksearchbar"
-        app:layout_constraintTop_toBottomOf="@+id/drinksearchbar"
-        app:layout_constraintVertical_bias="0.506" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/drinkhandler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="408dp"
         android:onClick="callWebserviceButtonHandler"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drinksearchbar" />
+        app:layout_constraintTop_toBottomOf="@+id/drinksearchbar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="126dp"
         android:layout_height="105dp"
-        app:srcCompat="@android:drawable/divider_horizontal_dim_dark"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="373dp" />
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/result_textview"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkhandler"
+        app:layout_constraintVertical_bias="0.003"
+        app:srcCompat="@android:drawable/divider_horizontal_dim_dark" />
 </androidx.constraintlayout.widget.ConstraintLayout>
