@@ -56,10 +56,20 @@ public class SearchDrinks extends AppCompatActivity {
         String one_ingredient = "";
         String all_ingreditents = "";
         private Bitmap bitmap = null;
-
+        private ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         @Override
         public void run(){
+
+            // Progress visibility should happen separately and before/while loading.
+            // Thread handler will first set progressBar to visible.
+            textHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    progressBar.setVisibility(View.VISIBLE);
+                }
+            });
+
             JSONObject jObject;
             try {
                 URL url = new URL(string_format);
@@ -98,6 +108,7 @@ public class SearchDrinks extends AppCompatActivity {
 
                 e.printStackTrace();
             }
+            //Thread handler will now set image and text views.
             textHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -118,6 +129,9 @@ public class SearchDrinks extends AppCompatActivity {
                         drinkImage.setImageBitmap(null);
 
                     }
+                    // Image isn't found so let user know nothing to load.
+                    progressBar.setVisibility(View.INVISIBLE);
+
                 }
             });
         }
