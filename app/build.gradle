@@ -3,14 +3,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storePassword 'zxcvbnM1!3211'
-            keyAlias 'zxcvbnM1!3211'
-            keyPassword 'zxcvbnM1!3211'
-            storeFile file('k')
-        }
-    }
     compileSdk 32
 
     defaultConfig {
