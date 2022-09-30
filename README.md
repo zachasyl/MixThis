@@ -1,11 +1,11 @@
  **MixThis**\
 \
 \
-This app tells you the ingredients to make a cocktail if it finds an exact match (capitalization excluded) for the cocktail name you search for.\
+This app tells you the ingredients required to make a cocktail when the user searches for a cocktail by name.\
 \
 **Description and Features**\
 \
-\cf0 Pictures of the application are located in the MixThis/pictures folder
+\Pictures of the application are located in the MixThis/pictures folder
 
 MixThis is a simple app that utilizes a search api form www.thecocktaildb.com; it was built while I learned to use public API on Android applications.\
 \
@@ -22,4 +22,4 @@ Once the user enters input, the name of a drink, the application will parse thro
 \
 **Authors**\
 \
-\Zachary Sylvane}
+Zachary Sylvane
